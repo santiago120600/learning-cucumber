@@ -83,4 +83,8 @@ public abstract class BasePage {
         String cellNeed = locator+"/tbody/tr["+row+"]/td["+column+"]";
         find(cellNeed).sendKeys(value);
     }
+
+    public void uploadFile(String locator,String filePath){
+        find(locator).sendKeys(filePath);
+    }
 }
