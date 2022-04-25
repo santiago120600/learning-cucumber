@@ -35,6 +35,10 @@ public abstract class BasePage {
         driver.get(url);
     }
 
+    public static void closeBrowser(){
+        driver.close();
+    }
+
     private WebElement find(String locator){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
@@ -107,6 +111,10 @@ public abstract class BasePage {
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.sendKeys(text);
         alert.accept();
+    }
+
+    public String textFromElement(String locator){
+        return find(locator).getText();
     }
 
 

@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pages.TablePage;
 
 public class TableSteps{
@@ -14,6 +15,6 @@ public class TableSteps{
 
     @Then("I can return the value I wanted")
     public void i_can_return_the_value_i_wanted() {
-        System.out.println(tablePage.getTableValue(1,1));
+        Assert.assertEquals("Smith",tablePage.getTableValue(1,1));
     }
 }
