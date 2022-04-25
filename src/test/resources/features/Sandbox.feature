@@ -7,8 +7,15 @@ Feature: Test different actions on a sandbox page
       Given I navigate to the static table
       Then I can return the value I wanted
 
-    @Test
     Scenario: As a user, I want to upload a file
       Given I navigate to the website
       Then I upload a file
+
+    @Test
+    Scenario: As a user, I click and dismiss an alert
+      Given I navigate to the alert website
+      Then click on the alert button
+      And dismiss the alert
+
+
 

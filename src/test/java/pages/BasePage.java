@@ -1,6 +1,7 @@
 package pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -87,4 +88,26 @@ public abstract class BasePage {
     public void uploadFile(String locator,String filePath){
         find(locator).sendKeys(filePath);
     }
+
+    public void switchToiFrame(int iFrameIndex){
+        driver.switchTo().frame(iFrameIndex);
+    }
+
+    public void switchToParentFrame(){
+        driver.switchTo().parentFrame();
+    }
+
+    public void dismissAlert(){
+        wait.until(ExpectedConditions.alertIsPresent());
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+    }
+
+    public void promptAlert(String text){
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.sendKeys(text);
+        alert.accept();
+    }
+
+
 }
