@@ -130,4 +130,7 @@ public abstract class BasePage {
         return driver.findElements(By.className(locator));
     }
 
+    public void clickLinkWithText(String text){
+        driver.findElement(By.linkText(text)).click();
+    }
 }

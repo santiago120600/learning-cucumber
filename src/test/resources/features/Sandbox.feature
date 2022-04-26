@@ -16,7 +16,6 @@ Feature: Test different actions on a sandbox page
       Then click on the alert button
       And dismiss the alert
 
-    @Test
     Scenario Outline: As a Test Engineer, I want to validate that a text is present inside the list
       Given I navigate to the list page
       When I search '<state>' in the list
