@@ -11,7 +11,8 @@ import pages.BasePage;
         features = {"src/test/resources/features"},
         glue = {"steps"},
         monochrome = true,
-        tags = "@Test"
+        tags = "@Test",
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:target/cucumber-report.json"}
 )
 public class Runner {
     @AfterAll

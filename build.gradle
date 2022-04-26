@@ -12,10 +12,11 @@ repositories {
 }
 
 def junitVersion = '5.8.2'
-def cucumberVersion = '7.3.1'
+def cucumberVersion = '7.3.2'
 def seleniumVersion = '4.1.2'
 def webDriverManagerVersion = '5.1.0'
 def logbackVersion = '1.2.11'
+def extentreportsVersion = '1.2.1'
 
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
@@ -25,6 +26,8 @@ dependencies {
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: cucumberVersion
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: webDriverManagerVersion
     testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
+    //implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: extentreportsVersion
+    implementation group: 'com.aventstack', name: 'extentreports-cucumber4-adapter', version: extentreportsVersion
 }
 
 test {
