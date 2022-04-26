@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public abstract class BasePage {
     protected static WebDriver driver;
@@ -117,5 +118,8 @@ public abstract class BasePage {
         return find(locator).getText();
     }
 
+    public List<WebElement> bringMeAllElements(String locator){
+        return driver.findElements(By.className(locator));
+    }
 
 }
