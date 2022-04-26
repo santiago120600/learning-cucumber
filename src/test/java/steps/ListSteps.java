@@ -16,15 +16,16 @@ public class ListSteps {
         listPage.navigateToListPage();
     }
 
-    @When("I search the list")
-    public void i_search_the_list() throws InterruptedException {
-        listPage.enterSearchCriteria();
+    @When("I search {string} in the list")
+    public void i_search_the_list(String state) throws InterruptedException {
+        listPage.enterSearchCriteria(state);
     }
 
-    @Then("I can find the text in the list")
-    public void i_can_find_the_text_in_the_list() {
+    @Then("I can find {string} in the list")
+    public void  i_can_find_the_text_in_the_list(String city) {
         List<String> list = listPage.getAllSearchResults();
-        boolean containsText = list.contains("Seattle, Washington");
+        boolean containsText = list.contains(city);
         Assert.assertTrue("The list do not contains the text given",containsText);
     }
+
 }

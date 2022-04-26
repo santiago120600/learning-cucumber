@@ -32,6 +32,14 @@ public abstract class BasePage {
         wait = new WebDriverWait(driver,Duration.ofSeconds(10));
     }
 
+    public void sleep(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void navigateTo(String url){
         driver.get(url);
     }
